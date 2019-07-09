@@ -1,33 +1,36 @@
 # Козловцев Сергей
 
-# Задача-1 easy
-a = 1
-a = input('Введите число')
+# Задание - 1
+def prtinfo(name, age, city):
+    a = name + ', ' + str(age) + 'год(а), проживает в городе ' + city
+    return a
+
+t = prtinfo('Ana', 23, 'Moscov')
+print(t)
+
+# Задание - 2
+def chisla(a, b, c ):
+    return max(a, b, c)
+
+a = chisla(23, 40, 12)
 print(a)
 
-# Задача-2 easy
-a = 0
-a = input('введите число')
-print(int(a) + 2)
+# Задание - 3
+def stroki(*args):
+    return max(args, key = len)
 
-# Задача-3 easy
-a = input('введите свой возраст')
-if int(a) >= 18:
-    print('Доступ разрешен')
-else:
-    print('Извините, пользование данным ресурсом только с 18 лет')
+print(stroki('Sergey', 'Alex', 'Ivan', 'Kiril', 'Vasiliy'))
 
-# Задача-1 normal
-a = int(input('введите число в диапазоне от 1 до 9 '))
-while (a < 0) and (a > 10):
-    a = input('введите число в диапазоне от 1 до 9 ')
-print( a **2 )
-
-# Задача-2 normal
-a = int(input('введите первую переменную '))
-b = int(input('введите вторую переменную '))
-a = a * b
-b = a / b
-a = a / b
-print(a)
-print(b)
+# Задание - 1
+names = ['Ana', 'Vlad', 'Alex', 'Vasya']
+salaris = [520000, 410000, 230000, 190000]
+slr = {}
+for i in names:
+    slr[i] = salaris[names.index(i)]
+    if salaris[names.index(i)] >= 500000:
+        slr.popitem()
+    else:
+        file = open('salary.txt','a',encoding = 'utf-8')
+        file.write('{} = {}\n'.format(i,slr[i]))
+        file.close
+print(slr)
