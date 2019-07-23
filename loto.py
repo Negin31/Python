@@ -1,3 +1,4 @@
+#Козловцев Сергей
 from random import sample
 class Card:
     def go_random():
